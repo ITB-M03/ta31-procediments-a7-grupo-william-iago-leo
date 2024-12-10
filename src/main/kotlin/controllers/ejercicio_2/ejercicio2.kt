@@ -60,7 +60,7 @@ fun pedirAlUsuario(scanner: Scanner): List<datos> {
     val fechaCompra_año = scanner.nextInt()
 
     // Definir el formato
-    val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
+    DateTimeFormatter.ofPattern("dd-MM-yyyy")
 
     // Crear la fecha usando LocalDate
     val fechaCompra = LocalDate.of(fechaCompra_año, fechaCompra_mes, fechaCompra_dia)
@@ -71,7 +71,6 @@ fun pedirAlUsuario(scanner: Scanner): List<datos> {
     val lista: List<datos> = listOf(datos(precio, tipoIva, fechaFormateada))
     return lista
 }
-
 fun calcularImpuesto(datos: List<datos>, impuestos: List<Impuestos>){
 
 
