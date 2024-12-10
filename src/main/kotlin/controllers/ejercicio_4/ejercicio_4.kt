@@ -4,7 +4,7 @@ import java.util.*
 
 fun main(){
 
-    val scan =  iniScanner()
+    val scan = iniScanner()
 
     val palabraClave = "superusuario"
 
@@ -37,8 +37,6 @@ fun validarSuperusuario(palabraClave:String, scan: Scanner){
             if (pass != palabraClave){
                 println("introduce la contraseña otra vez")
                 pass = password(scan)
-
-
             }
             intentos--
         }
@@ -50,4 +48,3 @@ fun validarSuperusuario(palabraClave:String, scan: Scanner){
 fun finScanner(scan:Scanner){
     scan.close()
 }
-
