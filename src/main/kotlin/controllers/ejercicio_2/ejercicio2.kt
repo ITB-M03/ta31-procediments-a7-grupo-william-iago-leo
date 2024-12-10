@@ -1,10 +1,6 @@
-package controllers
+package controllers.ejercicio_2
 
-import java.text.DateFormat
-import java.util.Arrays
-import java.util.Date
 import java.util.Scanner
-import javax.swing.text.DateFormatter
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
