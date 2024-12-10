@@ -13,8 +13,6 @@ data class Impuestos(
     val exempt:Int
 
 )
-
-
 data class datos(
     val precio:Int,
     val tipoIVa: Int,
@@ -22,12 +20,16 @@ data class datos(
 )
 fun main(){
     val scan = Scanner(System.`in`)
+
     var almacenar =  pedirAlUsuario(scan)
 
-    fp
+    var impuesto = calcularIva()
+
+     calcularImpuesto(almacenar,impuesto)
+
 }
 
-fun calcularIva(preu: Int, tipoIVa: Int, fechaCompra: LocalDate) {
+fun calcularIva():List<Impuestos> {
     val impuestos = listOf(
         Impuestos(LocalDate.parse("01-01-1986", DateTimeFormatter.ofPattern("dd-MM-yyyy")), 12, 6, 0, 0),
         Impuestos(LocalDate.parse("01-01-1992", DateTimeFormatter.ofPattern("dd-MM-yyyy")), 15, 6, 0, 0),
@@ -37,7 +39,7 @@ fun calcularIva(preu: Int, tipoIVa: Int, fechaCompra: LocalDate) {
         Impuestos(LocalDate.parse("15-07-2012", DateTimeFormatter.ofPattern("dd-MM-yyyy")), 21, 10, 4, 0)
     )
 
-
+    return impuestos
 }
 
 fun pedirAlUsuario(scanner: Scanner): List<datos> {
@@ -69,3 +71,18 @@ fun pedirAlUsuario(scanner: Scanner): List<datos> {
     val lista: List<datos> = listOf(datos(precio, tipoIva, fechaFormateada))
     return lista
 }
+
+fun calcularImpuesto(datos: List<datos>, impuestos: List<Impuestos>){
+
+
+}
+
+
+
+
+
+
+
+
+
+
