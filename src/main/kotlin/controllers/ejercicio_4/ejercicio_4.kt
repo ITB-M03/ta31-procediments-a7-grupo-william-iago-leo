@@ -8,10 +8,10 @@ fun main(){
 
     val palabraClave = "superusuario"
 
-    println("introduce el password:")
-   val contrasenya = password(scan)
 
-    validarSuperusuario(palabraClave, contrasenya)
+
+    println("introduce el password:")
+    validarSuperusuario(palabraClave,scan)
 
     finScanner(scan)
 
@@ -26,18 +26,25 @@ fun password(scan: Scanner):String{
     return password
 }
 
-fun validarSuperusuario(password:String,palabraClave:String){
+fun validarSuperusuario(palabraClave:String, scan: Scanner){
     var intentos = 3
-    if (password != palabraClave){
+    var pass = password(scan)
+
+    if (pass != palabraClave){
+        println("introduce la contraseña otra vez")
+        pass = password(scan)
         while(intentos > 0){
-            if (password != palabraClave){
+            if (pass != palabraClave){
                 println("introduce la contraseña otra vez")
+                pass = password(scan)
+
+
             }
             intentos--
         }
-        println("la contraseña es incorrecta")
+        println("la contraseña es correcta")
     }
-    else println("la contraseña es correcta")
+    else println("la contraseña es incorrecta")
 }
 
 fun finScanner(scan:Scanner){
