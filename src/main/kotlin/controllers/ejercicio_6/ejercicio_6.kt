@@ -4,8 +4,8 @@ import java.util.*
 
 /**
  * Clase que representa una pila con un tamaño máximo de elementos.
- * @property elementos Lista mutable que almacena los elementos de la pila.
- * @property maximo Tamaño máximo de la pila (10 elementos).
+ * @property elementos Lista mutable que almacena los elementos de la pila
+ * @property maximo Tamaño máximo de la pila (10 elementos)
  */
 data class Pila(
     val elementos: MutableList<Int> = mutableListOf(),
