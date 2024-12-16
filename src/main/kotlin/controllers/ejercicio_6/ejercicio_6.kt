@@ -19,31 +19,7 @@ fun main() {
     val scan = leerscan() // Inicializar el Scanner para entrada de datos.
     val pila = Pila() // Crear una instancia de Pila.
 
-    var opcion: Int
-    do {
-        menu() // Mostrar el menú de opciones.
-        opcion = seleccionarOpcion(scan) // Leer la opción seleccionada por el usuario.
-
-        when (opcion) {
-            1 -> {
-                println("Introduce un número para añadir a la pila:")
-                val numero = scan.nextInt()
-                push(pila, numero) // Añadir el número a la pila.
-            }
-            2 -> {
-                pop(pila) // Quitar el último número de la pila.
-            }
-            3 -> {
-                mostrarContenido(pila) // Mostrar el contenido de la pila.
-            }
-            4 -> {
-                println("Saliendo del programa.")
-            }
-            else -> {
-                println("Elige una opción correcta.")
-            }
-        }
-    } while (opcion != 4) // Repetir hasta que el usuario elija salir.
+    menu(scan,pila)
 
     terminarScanner(scan) // Cerrar el Scanner.
 }
@@ -68,12 +44,38 @@ fun seleccionarOpcion(scan: Scanner): Int {
 /**
  * Muestra el menú de opciones
  */
-fun menu() {
-    println("Elige qué quieres hacer:")
-    println("1 -- Añadir número (push)")
-    println("2 -- Quitar número (pop)")
-    println("3 -- Mostrar contenido de la pila")
-    println("4 -- Salir")
+fun menu(scan: Scanner, pila: Pila) {
+
+    var opcion: Int
+    do {
+        println("Elige qué quieres hacer:")
+        println("1 -- Añadir número (push)")
+        println("2 -- Quitar número (pop)")
+        println("3 -- Mostrar contenido de la pila")
+        println("4 -- Salir")
+        // Mostrar el menú de opciones.
+        opcion = seleccionarOpcion(scan) // Leer la opción seleccionada por el usuario.
+
+        when (opcion) {
+            1 -> {
+                println("Introduce un número para añadir a la pila:")
+                val numero = scan.nextInt()
+                push(pila, numero) // Añadir el número a la pila.
+            }
+            2 -> {
+                pop(pila) // Quitar el último número de la pila.
+            }
+            3 -> {
+                mostrarContenido(pila) // Mostrar el contenido de la pila.
+            }
+            4 -> {
+                println("Saliendo del programa.")
+            }
+            else -> {
+                println("Elige una opción correcta.")
+            }
+        }
+    } while (opcion != 4) // Repetir hasta que el usuario elija salir.
 }
 
 /**
